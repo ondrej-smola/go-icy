@@ -21,6 +21,6 @@ func TestParseMetadata(t *testing.T) {
 		t.Fatal("nil metadata")
 	}
 	if metadata.StreamTitle != expected.StreamTitle {
-		t.Error("invalid StreamTitle: expecting %#v (got %#v)", metadata.StreamTitle, expected.StreamTitle)
+		t.Error("invalid StreamTitle: expecting %#v (got %#v)", expected.StreamTitle, metadata.StreamTitle)
 	}
 }
