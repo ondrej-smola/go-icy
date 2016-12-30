@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"net"
 	"net/url"
+	"runtime"
 	"strconv"
 	"strings"
 )
@@ -163,7 +164,7 @@ func (s *stream) Open() (err error) {
 		scanner.Split(s.SplitFunc())
 
 		for !interrupted && scanner.Scan() {
-			// Do nothing.
+			runtime.Gosched()
 		}
 		if err := scanner.Err(); err != nil {
 			if s.chErrors == nil {
